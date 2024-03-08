@@ -1,28 +1,37 @@
-import type { GatsbyConfig, PluginRef } from "gatsby"
-import "dotenv/config"
+import type { GatsbyConfig, PluginRef } from "gatsby";
+import "dotenv/config";
 
-const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE
+const shouldAnalyseBundle = process.env.ANALYSE_BUNDLE;
 
 const config: GatsbyConfig = {
   siteMetadata: {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-emilia-core/gatsby-config.mjs
-    siteTitle: `Emilia`,
-    siteTitleAlt: `Emilia - Gatsby Starter Portfolio`,
-    siteHeadline: `Emilia - Gatsby Theme from @lekoarts`,
-    siteUrl: `https://emilia.lekoarts.de`,
+    siteTitle: `2After5 - Photography Portfolio by Prithiv Mohan`,
+    siteTitleAlt: `2After5 - Photography Portfolio by Prithiv Mohan`,
+    siteHeadline: `2After5 - Photography Portfolio by Prithiv Mohan`,
+    siteUrl: `https://2after5.com`,
     siteDescription: `Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI. Includes Light/Dark mode.`,
     siteImage: `/banner.jpg`,
     siteLanguage: `en`,
-    author: `@lekoarts_de`,
+    author: `Prithiv Mohan`,
   },
   trailingSlash: `always`,
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       // See the theme's README for all available options
-      options: {},
+      options: {
+        name: `2After5`,
+        location: `Trier, Germany`,
+        socialMedia: [
+          {
+            title: `Instagram`,
+            href: `https://www.instagram.com/2after5`,
+          },
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-sitemap`,
@@ -66,6 +75,6 @@ const config: GatsbyConfig = {
       },
     },
   ].filter(Boolean) as Array<PluginRef>,
-}
+};
 
-export default config
+export default config;
